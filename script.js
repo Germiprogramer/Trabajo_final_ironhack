@@ -3,6 +3,7 @@ const obstacle = document.getElementById('obstacle');
 const aerialObstacle = document.getElementById('aerialObstacle');
 const timeCounter = document.getElementById('timeCounter');
 const jumpCounter = document.getElementById('jumpCounter');
+const aerialObstacleSpeed = 0.57;
 
 let jumps = 0;
 let seconds = 0;
@@ -49,16 +50,32 @@ function updateTimer() {
 }
 
 function checkCollision() {
-  const dinoRect = dino.getBoundingClientRect();
-  const obstacleRect = obstacle.getBoundingClientRect();
-
-  return (
-    dinoRect.bottom > obstacleRect.top &&
-    dinoRect.top < obstacleRect.bottom &&
-    dinoRect.right > obstacleRect.left &&
-    dinoRect.left < obstacleRect.right
-  );
-}
+    const dinoRect = dino.getBoundingClientRect();
+    const obstacleRect = obstacle.getBoundingClientRect();
+  
+    // Verificar si el elemento aerialObstacle existe
+    const aerialObstacleRect = aerialObstacle ? aerialObstacle.getBoundingClientRect() : null;
+  
+    // Verificar la colisión con el obstáculo terrestre
+    const obstacleCollision = (
+      dinoRect.bottom > obstacleRect.top &&
+      dinoRect.top < obstacleRect.bottom &&
+      dinoRect.right > obstacleRect.left &&
+      dinoRect.left < obstacleRect.right
+    );
+  
+    // Verificar la colisión con el obstáculo aéreo si existe
+    const aerialObstacleCollision = aerialObstacleRect && (
+      dinoRect.bottom > aerialObstacleRect.top &&
+      dinoRect.top < aerialObstacleRect.bottom &&
+      dinoRect.right > aerialObstacleRect.left &&
+      dinoRect.left < aerialObstacleRect.right
+    );
+  
+    // Devolver verdadero si hay colisión con alguno de los obstáculos
+    return obstacleCollision || aerialObstacleCollision;
+  }
+  
 
 function gameLoop() {
     if (checkCollision()) {
@@ -67,6 +84,10 @@ function gameLoop() {
       } else {
         // Ajustar la velocidad del obstáculo según la variable obstacleSpeed
         obstacle.style.animation = `obstacleAnimation ${2 / obstacleSpeed}s linear infinite`;
+        // Ajustar la velocidad del obstáculo aéreo según la variable obstacleSpeed
+        if (aerialObstacle) {
+          aerialObstacle.style.animation = `obstacleAnimation ${2 / aerialObstacleSpeed}s linear infinite`;
+        }
         
         requestAnimationFrame(gameLoop);
   }

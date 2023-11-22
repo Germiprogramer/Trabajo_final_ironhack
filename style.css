@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url('ruta.jpg'); /* Ruta a tu imagen de fondo */
+    background-image: url('images/ruta.jpg'); /* Ruta a tu imagen de fondo */
     background-size: cover;
 
   }
@@ -13,7 +13,7 @@ body {
     left: 50px;
     width: 80px; /* Ajusta el tamaño según tu imagen de dinosaurio */
     height: 100px; /* Ajusta el tamaño según tu imagen de dinosaurio */
-    background-image: url('charmander.png'); /* Ruta a tu imagen de dinosaurio */
+    background-image: url('images/charmander.png'); /* Ruta a tu imagen de dinosaurio */
     background-size: cover;
   }
   
@@ -23,19 +23,21 @@ body {
     left: 100%;
     width: 70px; /* Ajusta el tamaño según tu imagen de obstáculo */
     height: 70px; /* Ajusta el tamaño según tu imagen de obstáculo */
-    background-image: url('arbusto.png'); /* Ruta a tu imagen de obstáculo */
+    background-image: url('images/digglet.png'); /* Ruta a tu imagen de obstáculo */
     background-size: cover;
     animation: obstacleAnimation 2s linear infinite;
   }
 
   #aerialObstacle {
     position: absolute;
-    bottom: 0;
+    bottom: 240px;
     left: 100%;
-    width: 20px; /* Ajusta el tamaño según tus necesidades */
-    height: 20px; /* Ajusta el tamaño según tus necesidades */
-    background-color: red; /* Cambia el color según tus necesidades */
-    border-radius: 50%;
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px; /* Ajusta el tamaño según tus necesidades */
+    background-image: url('images/pidgeotto.png'); /* Ruta a tu imagen de obstáculo */
+    background-size: cover;
+    animation: obstacleAnimation 2s linear infinite;
+
   }
   
   
