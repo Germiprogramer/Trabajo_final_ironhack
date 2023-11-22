@@ -28,7 +28,7 @@ body {
     animation: obstacleAnimation 2s linear infinite;
   }
 
-  .aerialObstacle {
+  #aerialObstacle {
     position: absolute;
     bottom: 0;
     left: 100%;

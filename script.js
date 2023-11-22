@@ -1,5 +1,6 @@
 const dino = document.getElementById('dino');
 const obstacle = document.getElementById('obstacle');
+const aerialObstacle = document.getElementById('aerialObstacle');
 const timeCounter = document.getElementById('timeCounter');
 const jumpCounter = document.getElementById('jumpCounter');
 
@@ -9,8 +10,9 @@ let obstacleSpeed = 1;
 const initialObstacleSpeed = 1;
 const maxObstacleSpeed = 1.6;
 
-
 document.addEventListener('keydown', jump);
+
+
 
 function jump(event) {
   if (event.code === 'Space' && !dino.classList.contains('jumping')) {
@@ -37,8 +39,14 @@ function updateTimer() {
       if (obstacleSpeed > maxObstacleSpeed) {
         obstacleSpeed = initialObstacleSpeed; // Restablecer la velocidad al valor inicial
       }
+
+      if (Math.random() < 0.9) { // Probabilidad de 20%
+        createHigherAerialObstacle();
+        }
+
+
     }
-  }
+}
 
 function checkCollision() {
   const dinoRect = dino.getBoundingClientRect();
@@ -66,40 +74,7 @@ function gameLoop() {
 
 // ... (Código existente)
 
-function createAerialObstacle() {
-    const aerialObstacle = document.createElement('div');
-    aerialObstacle.className = 'aerialObstacle';
-    document.body.appendChild(aerialObstacle);
-  
-    const randomHeight = Math.random() * window.innerHeight / 2; // Altura aleatoria hasta la mitad de la ventana
-    aerialObstacle.style.bottom = randomHeight + 'px';
-  
-    const aerialObstacleSpeed = 1.5; // Velocidad del obstáculo aéreo
-    const animationDuration = window.innerWidth / aerialObstacleSpeed; // Duración basada en la velocidad y el ancho de la ventana
-    aerialObstacle.style.animation = `aerialObstacleAnimation ${animationDuration}s linear infinite`;
-  
-    setTimeout(() => {
-      aerialObstacle.remove();
-    }, animationDuration * 1000); // Eliminar el obstáculo después de la duración de la animación
-  }
-  
-  function updateTimer() {
-    seconds++;
-    timeCounter.textContent = seconds;
-  
-    if (seconds % 10 === 0) {
-      obstacleSpeed += 0.9;
-  
-      if (obstacleSpeed > maxObstacleSpeed) {
-        obstacleSpeed = initialObstacleSpeed; // Restablecer la velocidad al valor inicial
-      }
-  
-      // Crear obstáculo aéreo ocasionalmente
-      if (Math.random() < 0.2) { // Probabilidad de 20%
-        createAerialObstacle();
-      }
-    }
-  }
+
   
 
 setInterval(updateTimer, 1000);
