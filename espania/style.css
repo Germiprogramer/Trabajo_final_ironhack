@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('images/congreso.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+
+  }
+  
+  #dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 80px; /* Ajusta el tamaño según tu imagen de dinosaurio */
+    height: 100px; /* Ajusta el tamaño según tu imagen de dinosaurio */
+    background-image: url('images/pedro_sanchez.png'); /* Ruta a tu imagen de dinosaurio */
+    background-size: cover;
+  }
+  
+  #obstacle {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 70px; /* Ajusta el tamaño según tu imagen de obstáculo */
+    height: 50px; /* Ajusta el tamaño según tu imagen de obstáculo */
+    background-image: url('images/bandera_espania.png'); /* Ruta a tu imagen de obstáculo */
+    background-size: cover;
+    animation: obstacleAnimation 2s linear infinite;
+  }
+
+  #aerialObstacle {
+    position: absolute;
+    bottom: 240px;
+    left: 100%;
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
+    height: 50px; /* Ajusta el tamaño según tus necesidades */
+    background-image: url('images/gaviota.png'); /* Ruta a tu imagen de obstáculo */
+    background-size: cover;
+    animation: obstacleAnimation 2s linear infinite;
+
+  }
+  
+  
+  #stats {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px; /* Añadido para dar espacio alrededor del cuadro de estadísticas */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo con opacidad */
+    border-radius: 5px; /* Esquinas redondeadas */
+    text-align: right;
+  }
+  
+  #timeCounter, #jumpCounter {
+    font-weight: bold;
+  }
+
+  @keyframes obstacleAnimation {
+    to {
+      left: -20px;
+    }
+  }
+  
+  @keyframes jumpAnimation {
+    0% {
+      bottom: 0;
+    }
+
+
+    50% {
+      bottom: 250px;
+    }
+
+
+
+    100% {
+      bottom: 0;
+    }
+
+  }
+
+  @keyframes aerialObstacleAnimation {
+    to {
+      left: -20px;
+    }
+  }
+  
