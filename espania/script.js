@@ -3,7 +3,7 @@ const obstacle = document.getElementById('obstacle');
 const aerialObstacle = document.getElementById('aerialObstacle');
 const timeCounter = document.getElementById('timeCounter');
 const jumpCounter = document.getElementById('jumpCounter');
-const aerialObstacleSpeed = 0.57;
+const aerialObstacleSpeed = 0.4;
 
 let jumps = 0;
 let seconds = 0;

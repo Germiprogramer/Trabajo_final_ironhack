@@ -3,7 +3,7 @@ const obstacle = document.getElementById('obstacle');
 const aerialObstacle = document.getElementById('aerialObstacle');
 const timeCounter = document.getElementById('timeCounter');
 const jumpCounter = document.getElementById('jumpCounter');
-const aerialObstacleSpeed = 0.57;
+const aerialObstacleSpeed = 0.4;
 
 let jumps = 0;
 let seconds = 0;
@@ -41,7 +41,7 @@ function updateTimer() {
         obstacleSpeed = initialObstacleSpeed; // Restablecer la velocidad al valor inicial
       }
 
-      if (Math.random() < 0.9) { // Probabilidad de 20%
+      if (Math.random() < 0.3) { // Probabilidad de 20%
         createHigherAerialObstacle();
         }
 
