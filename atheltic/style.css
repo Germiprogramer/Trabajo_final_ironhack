@@ -30,7 +30,7 @@ body {
 
   #aerialObstacle {
     position: absolute;
-    bottom: 240px;
+    bottom: 340px;
     left: 100%;
     width: 50px; /* Ajusta el tamaño según tus necesidades */
     height: 50px; /* Ajusta el tamaño según tus necesidades */
