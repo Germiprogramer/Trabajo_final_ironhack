@@ -1,0 +1,47 @@
+body {
+    font-family: 'Courier New', monospace; /* Cambié el tipo de letra a 'Courier New' */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('images/fondo_dinosaurio.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover;
+}
+
+.menu-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: #333;
+}
+
+.noticias {
+    margin-top: 20px;
+}
+
+h2 {
+    color: #0066cc;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+/* Explicación del juego del dinosaurio */
+.explanation {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+.explanation p {
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con opacidad */
+    padding: 10px; /* Espaciado interno para mejorar la legibilidad */
+    border-radius: 8px; /* Esquinas redondeadas */
+    color: #333; 
+}
+
