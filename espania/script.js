@@ -9,7 +9,7 @@ let jumps = 0;
 let seconds = 0;
 let obstacleSpeed = 1;
 const initialObstacleSpeed = 1;
-const maxObstacleSpeed = 1.6;
+const maxObstacleSpeed = 1.5;
 
 document.addEventListener('keydown', jump);
 
@@ -92,11 +92,6 @@ function gameLoop() {
         requestAnimationFrame(gameLoop);
   }
 }
-
-// ... (Código existente)
-
-
-  
 
 setInterval(updateTimer, 1000);
 
